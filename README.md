@@ -25,3 +25,7 @@ React Router practice project from [React - The Complete Guide (incl Hooks, Reac
 - `useRouteMatch` gives the path as it was defined in the react Route component
   - ```/quotes/:quoteId```
 
+## Lazy Loading
+
+- Load certain parts of code only when needed
+

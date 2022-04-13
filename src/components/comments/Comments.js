@@ -12,13 +12,13 @@ const Comments = () => {
   const [isAddingComment, setIsAddingComment] = useState(false)
   const params = useParams()
 
-  const { sendRequest, status, data: loadedComments } = useHttp(getAllComments)
-
   const { quoteId } = params
+
+  const { sendRequest, status, data: loadedComments } = useHttp(getAllComments)
 
   useEffect(() => {
     sendRequest(quoteId)
-  }, [sendRequest, quoteId])
+  }, [quoteId, sendRequest])
 
   const startAddCommentHandler = () => {
     setIsAddingComment(true)
@@ -59,7 +59,7 @@ const Comments = () => {
       )}
       {isAddingComment && (
         <NewCommentForm
-          quoteId={params.quoteId}
+          quoteId={quoteId}
           onAddedComment={addedCommentHandler}
         />
       )}
