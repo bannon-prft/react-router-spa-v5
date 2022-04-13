@@ -28,4 +28,14 @@ React Router practice project from [React - The Complete Guide (incl Hooks, Reac
 ## Lazy Loading
 
 - Load certain parts of code only when needed
+- easy to implement when using Routing
+  - only download code when route is visited
+```js
+// without lazy loading
+import NewQuote from './pages/NewQuote'
+
+// with lazy
+const NewQuote = React.lazy(() => import('./pages/NewQuote'))
+```
+must supply a fallback with `<Suspense fallback={<p>Loading...</p>} />`
 
